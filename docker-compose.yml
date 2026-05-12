@@ -1,0 +1,11 @@
+# qoo10-sdk開発環境
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./:/app
+    tty: true
