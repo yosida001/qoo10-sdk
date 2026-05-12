@@ -1,63 +1,34 @@
 <?php
+
 namespace Yosida001\Qoo10Sdk;
 
-use GuzzleHttp\Client;
+use Yosida001\Qoo10Sdk\Http\Requester;
+use Yosida001\Qoo10Sdk\Services\ItemService;
+use Yosida001\Qoo10Sdk\Services\OrderService;
+use Yosida001\Qoo10Sdk\Services\ShippingService;
 
-/**
- * とりあえず最小構成としてのクライアント
- */
 class Qoo10Client
 {
-    /**
-     * @var Client
-     */
-    private $httpClient;
+    private $requester;
 
-    /**
-     * @var string
-     */
-    private $apiKey;
-
-    /**
-     * @var string
-     */
-    private $baseUrl;
-
-    /**
-     * Qoo10Client constructor.
-     *
-     * @param string $apiKey
-     * @param string $baseUrl
-     */
-    public function __construct(
-        $apiKey,
-        $baseUrl = 'https://api.qoo10.jp'
-    ) {
-        $this->apiKey = $apiKey;
-        $this->baseUrl = rtrim($baseUrl, '/');
-
-        $this->httpClient = new Client([
-            'base_uri' => $this->baseUrl,
-            'timeout' => 30,
-        ]);
+    public function __construct($apiKey, $baseUrl = 'https://api.qoo10.jp')
+    {
+        $config = new Config($apiKey, $baseUrl);
+        $this->requester = new Requester($config);
     }
 
-    /**
-     * @param string $path
-     * @param array $query
-     * @return array
-     */
-    public function get($path, array $query = [])
+    public function items()
     {
-        $response = $this->httpClient->get($path, [
-            'query' => array_merge($query, [
-                'key' => $this->apiKey,
-            ]),
-        ]);
+        return new ItemService($this->requester);
+    }
 
-        return json_decode(
-            (string) $response->getBody(),
-            true
-        );
+    public function orders()
+    {
+        return new OrderService($this->requester);
+    }
+
+    public function shipping()
+    {
+        return new ShippingService($this->requester);
     }
 }
