@@ -2,6 +2,7 @@
 
 namespace Yosida001\Qoo10Sdk\Services;
 
+use Yosida001\Qoo10Sdk\Exceptions\Qoo10Exception;
 use Yosida001\Qoo10Sdk\Http\Requester;
 
 abstract class AbstractService
@@ -25,7 +26,8 @@ abstract class AbstractService
      * @param string $apiMethod
      * @param string $version
      * @param array $params
-     * @return null
+     * @return mixed|string
+     * @throws Qoo10Exception
      */
     protected function get(string $apiMethod, string $version = "1.0", array $params = [])
     {
@@ -41,11 +43,12 @@ abstract class AbstractService
      * @param string $apiMethod
      * @param string $version
      * @param array $params
-     * @return null
+     * @return mixed|string
+     * @throws Qoo10Exception
      */
     protected function post(string $apiMethod, string $version = "1.0", array $params = [])
     {
-        return $this->requester->getRequest(
+        return $this->requester->postRequest(
             $this->baseUri,
             $apiMethod,
             $version,

@@ -36,11 +36,11 @@ class Config
      * @param string $userAgent
      */
     public function __construct(
-        $certificationKey,
+        string     $certificationKey,
         ReturnType $returnType,
-        $timeout = 30,
-        $debug = false,
-        $userAgent = 'yosida001/qoo10-sdk'
+        int        $timeout = 30,
+        bool       $debug = false,
+        string $userAgent = 'yosida001/qoo10-sdk'
     )
     {
         $this->certificationKey = $certificationKey;
@@ -74,7 +74,7 @@ class Config
     /**
      * @return string
      */
-    public function getCertificationKey()
+    public function getCertificationKey(): string
     {
         return $this->certificationKey;
     }
@@ -82,7 +82,7 @@ class Config
     /**
      * @return int
      */
-    public function getTimeout()
+    public function getTimeout(): int
     {
         return $this->timeout;
     }
@@ -90,7 +90,7 @@ class Config
     /**
      * @return bool
      */
-    public function isDebug()
+    public function isDebug(): bool
     {
         return $this->debug;
     }
@@ -98,7 +98,7 @@ class Config
     /**
      * @return string
      */
-    public function getUserAgent()
+    public function getUserAgent(): string
     {
         return $this->userAgent;
     }

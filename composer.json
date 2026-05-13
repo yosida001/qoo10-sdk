@@ -2,7 +2,7 @@
     "name": "yosida001/qoo10-sdk",
     "description": "Qoo10 API SDK",
     "type": "library",
-    "license": "proprietary",
+    "license": "Apache-2.0",
     "require": {
         "php": "^7.2",
         "guzzlehttp/guzzle": "^6.0 || ^7.0"
