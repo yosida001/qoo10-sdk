@@ -2,7 +2,6 @@
 
 namespace Yosida001\Qoo10Sdk\Services;
 
-use Yosida001\Qoo10Sdk\Endpoint;
 use Yosida001\Qoo10Sdk\Http\Requester;
 
 abstract class AbstractService
@@ -11,6 +10,8 @@ abstract class AbstractService
      * @var Requester
      */
     protected $requester;
+
+    protected $baseUri;
 
     /**
      * @param Requester $requester
@@ -21,60 +22,34 @@ abstract class AbstractService
     }
 
     /**
-     * @param string $baseUrl
-     * @param string $apiName
-     * @param array $params
+     * @param string $apiMethod
      * @param string $version
-     * @param string $httpMethod
-     * @return array
+     * @param array $params
+     * @return null
      */
-    protected function call(
-        $baseUrl,
-        $apiName,
-        array $params = [],
-        $version = '1.0',
-        $httpMethod = 'POST'
-    ) {
-        return $this->requester->request(
-            new Endpoint(
-                $baseUrl,
-                $apiName,
-                $version,
-                $httpMethod
-            ),
+    protected function get(string $apiMethod, string $version = "1.0", array $params = [])
+    {
+        return $this->requester->getRequest(
+            $this->baseUri,
+            $apiMethod,
+            $version,
             $params
         );
     }
 
     /**
-     * @param string $baseUrl
-     * @param string $apiName
-     * @param array $params
+     * @param string $apiMethod
      * @param string $version
-     * @return array
-     */
-    protected function get(
-        $baseUrl,
-        $apiName,
-        array $params = [],
-        $version = '1.0'
-    ) {
-        return $this->call($baseUrl, $apiName, $params, $version, 'GET');
-    }
-
-    /**
-     * @param string $baseUrl
-     * @param string $apiName
      * @param array $params
-     * @param string $version
-     * @return array
+     * @return null
      */
-    protected function post(
-        $baseUrl,
-        $apiName,
-        array $params = [],
-        $version = '1.0'
-    ) {
-        return $this->call($baseUrl, $apiName, $params, $version, 'POST');
+    protected function post(string $apiMethod, string $version = "1.0", array $params = [])
+    {
+        return $this->requester->getRequest(
+            $this->baseUri,
+            $apiMethod,
+            $version,
+            $params
+        );
     }
 }
