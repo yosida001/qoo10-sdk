@@ -4,7 +4,6 @@ namespace Yosida001\Qoo10Sdk\Tests\Unit\Requests;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetAllGoodsInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetGoodsInventoryInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetGoodsOptionInfoRequest;
@@ -23,15 +22,7 @@ class ItemsLookupRequestTest extends TestCase
         $result = $request->toArray();
 
         $this->assertSame($expectedKeys, array_keys($result));
-
-        foreach ($expectedKeys as $name) {
-            if (array_key_exists($name, $input)) {
-                $this->assertSame($input[$name], $result[$name]);
-                continue;
-            }
-
-            $this->assertSame('', $result[$name]);
-        }
+        $this->assertSame(array_replace(array_fill_keys($expectedKeys, ''), $input), $result);
     }
 
     public function testItRejectsUnknownParameters(): void
