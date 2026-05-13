@@ -1,0 +1,22 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker compose build
+
+      - name: Install dependencies
+        run: docker compose run --rm php composer install --no-interaction --prefer-dist
+
+      - name: Run PHPUnit
+        run: docker compose run --rm php vendor/bin/phpunit --configuration phpunit.xml.dist
