@@ -11,7 +11,7 @@ class Qoo10Client
 {
     private $requester;
 
-    public function __construct($apiKey, $baseUrl = 'https://api.qoo10.jp')
+    public function __construct($apiKey, $baseUrl = 'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi')
     {
         $config = new Config($apiKey, $baseUrl);
         $this->requester = new Requester($config);

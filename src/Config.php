@@ -2,28 +2,77 @@
 
 namespace Yosida001\Qoo10Sdk;
 
-/**
- * Qoo10APIにアクセスするうえで必要な設定などを書き込むためのコンフィグクラス。
- *
- */
 class Config
 {
-    private $apiKey;
-    private $baseUrl;
+    /**
+     * @var string
+     */
+    private $certificationKey;
 
-    public function __construct($apiKey, $baseUrl = 'https://api.qoo10.jp')
-    {
-        $this->apiKey = $apiKey;
-        $this->baseUrl = rtrim($baseUrl, '/');
+    /**
+     * @var int
+     */
+    private $timeout;
+
+    /**
+     * @var bool
+     */
+    private $debug;
+
+    /**
+     * @var string
+     */
+    private $userAgent;
+
+    /**
+     * Config constructor.
+     *
+     * @param string $certificationKey
+     * @param int $timeout
+     * @param bool $debug
+     * @param string $userAgent
+     */
+    public function __construct(
+        $certificationKey,
+        $timeout = 30,
+        $debug = false,
+        $userAgent = 'yosida001/qoo10-sdk'
+    ) {
+        $this->certificationKey = $certificationKey;
+        $this->timeout = $timeout;
+        $this->debug = $debug;
+        $this->userAgent = $userAgent;
     }
 
-    public function getApiKey()
+    /**
+     * @return string
+     */
+    public function getCertificationKey()
     {
-        return $this->apiKey;
+        return $this->certificationKey;
     }
 
-    public function getBaseUrl()
+    /**
+     * @return int
+     */
+    public function getTimeout()
     {
-        return $this->baseUrl;
+        return $this->timeout;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserAgent()
+    {
+        return $this->userAgent;
     }
 }
