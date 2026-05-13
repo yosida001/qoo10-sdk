@@ -35,11 +35,7 @@ class Requester
         array $params = []
     )
     {
-        $client = new Client([
-            "base_uri" => $baseUrl,
-            RequestOptions::TIMEOUT => $this->config->getTimeout(),
-            RequestOptions::DEBUG => $this->config->isDebug()
-        ]);
+        $client = $this->createClient($baseUrl);
 
         //Qoo10では各種パラメータはすべてurl_queryに入れる
         $options = [
@@ -72,11 +68,7 @@ class Requester
         array $params = []
     )
     {
-        $client = new Client([
-            "base_uri" => $baseUrl,
-            RequestOptions::TIMEOUT => $this->config->getTimeout(),
-            RequestOptions::DEBUG => $this->config->isDebug()
-        ]);
+        $client = $this->createClient($baseUrl);
 
         $headers = [
             'Content-Type' => 'application/x-www-form-urlencoded',
@@ -120,5 +112,20 @@ class Requester
         }
 
         return $body;
+    }
+
+    /**
+     * Create a configured Guzzle client.
+     *
+     * @param string $baseUrl
+     * @return Client
+     */
+    protected function createClient($baseUrl): Client
+    {
+        return new Client([
+            'base_uri' => $baseUrl,
+            RequestOptions::TIMEOUT => $this->config->getTimeout(),
+            RequestOptions::DEBUG => $this->config->isDebug(),
+        ]);
     }
 }
