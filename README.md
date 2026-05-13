@@ -7,16 +7,7 @@ Qoo10へのアクセスに利用するSDKです。
 
 [Qoo10 API Developer's Guide](https://api.qoo10.jp/GMKT.INC.Front.QAPIService/Document/QAPIGuideIndex.aspx)
 
-基本的にQoo10のAPIはPOSTでもGETでも利用可能なものが多いですが、現在は両方とも空いている場合はPOST通信を優先的に利用するようにしています。
-
-また公開されているパラメータには必須・必須でない等のパラメータ詳細情報は載っていないため、このSDKのrequestsクラスではあえて実装していません。
-
-必要な場合はリクエスターを継承し、自前で実装してください。
-
-## 将来的なアップデート予定
-
-- ConfigにPOST通信・GET通信のどちらを優先して利用するかの設定の追加
-- Monolog対応
+Qoo10 API の仕様をもとに実装しています。
 
 ## テスト実行
 
