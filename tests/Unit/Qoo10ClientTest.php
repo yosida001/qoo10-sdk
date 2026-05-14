@@ -4,7 +4,6 @@ namespace Yosida001\Qoo10Sdk\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Yosida001\Qoo10Sdk\Config;
-use Yosida001\Qoo10Sdk\Http\Requester;
 use Yosida001\Qoo10Sdk\Qoo10Client;
 use Yosida001\Qoo10Sdk\Services\CertificationAPIService;
 use Yosida001\Qoo10Sdk\Services\ClaimService;
@@ -29,16 +28,6 @@ class Qoo10ClientTest extends TestCase
         $this->assertInstanceOf(CertificationAPIService::class, $service);
     }
 
-    public function testItCreatesTheRequesterFromTheProvidedConfig(): void
-    {
-        $config = new Config('cert-key', ReturnType::xml());
-        $requester = $this->createMock(Requester::class);
-        $client = new TestableQoo10Client($config, $requester);
-
-        $this->assertSame($config, $client->capturedConfig);
-        $this->assertSame($requester, $client->capturedRequester);
-    }
-
     public function testItBuildsTheItemsServices(): void
     {
         $client = new Qoo10Client(new Config('cert-key', ReturnType::json()));
@@ -52,30 +41,5 @@ class Qoo10ClientTest extends TestCase
         $this->assertInstanceOf(CommonInfoLookupService::class, $client->commonInfoLookup());
         $this->assertInstanceOf(CSCenterService::class, $client->csCenter());
         $this->assertInstanceOf(ShippingBasicService::class, $client->shippingBasic());
-    }
-}
-
-class TestableQoo10Client extends Qoo10Client
-{
-    /** @var Config */
-    public $capturedConfig;
-
-    /** @var Requester */
-    public $capturedRequester;
-
-    private $requester;
-
-    public function __construct(Config $config, Requester $requester)
-    {
-        $this->requester = $requester;
-        parent::__construct($config);
-    }
-
-    protected function createRequester(Config $config): Requester
-    {
-        $this->capturedConfig = $config;
-        $this->capturedRequester = $this->requester;
-
-        return $this->requester;
     }
 }

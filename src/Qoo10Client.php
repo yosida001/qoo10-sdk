@@ -20,12 +20,7 @@ class Qoo10Client
 
     public function __construct(Config $config)
     {
-        $this->requester = $this->createRequester($config);
-    }
-
-    protected function createRequester(Config $config): Requester
-    {
-        return new Requester($config);
+        $this->requester = new Requester($config);
     }
 
     public function certification(): CertificationAPIService

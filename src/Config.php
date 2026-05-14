@@ -17,6 +17,11 @@ class Config
     private $timeout;
 
     /**
+     * @var bool
+     */
+    private $debug;
+
+    /**
      * @var ReturnType
      */
     private $returnType;
