@@ -5,6 +5,7 @@ namespace Yosida001\Qoo10Sdk;
 use Yosida001\Qoo10Sdk\Http\Requester;
 use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsBasicService;
+use Yosida001\Qoo10Sdk\Services\Items\ItemsContentsService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsLookupService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsOptionsService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsOrderService;
@@ -41,5 +42,10 @@ class Qoo10Client
     public function itemsOptionsService(): ItemsOptionsService
     {
         return new ItemsOptionsService($this->requester);
+    }
+
+    public function itemsContentsService(): ItemsContentsService
+    {
+        return new ItemsContentsService($this->requester);
     }
 }
