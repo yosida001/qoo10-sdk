@@ -65,8 +65,6 @@ $config = new Config(
 - `csCenter()`
 - `shippingBasic()`
 
-`itemsOrderService()`、`itemsOptionsService()`、`itemsContentsService()` も後方互換のため利用できます。
-
 ## 例外
 
 HTTP通信やJSONデコードに失敗した場合は `Yosida001\Qoo10Sdk\Exceptions\Qoo10Exception` が送出されます。

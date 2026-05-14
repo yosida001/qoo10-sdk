@@ -38,29 +38,14 @@ class Qoo10Client
         return new ItemsLookupService($this->requester);
     }
 
-    public function itemsOrderService(): ItemsOrderService
-    {
-        return $this->itemsOrder();
-    }
-
     public function itemsOrder(): ItemsOrderService
     {
         return new ItemsOrderService($this->requester);
     }
 
-    public function itemsOptionsService(): ItemsOptionsService
-    {
-        return $this->itemsOptions();
-    }
-
     public function itemsOptions(): ItemsOptionsService
     {
         return new ItemsOptionsService($this->requester);
-    }
-
-    public function itemsContentsService(): ItemsContentsService
-    {
-        return $this->itemsContents();
     }
 
     public function itemsContents(): ItemsContentsService
