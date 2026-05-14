@@ -34,11 +34,8 @@ class Qoo10ClientTest extends TestCase
 
         $this->assertInstanceOf(ItemsBasicService::class, $client->itemsBasic());
         $this->assertInstanceOf(ItemsLookupService::class, $client->itemsLookup());
-        $this->assertInstanceOf(ItemsOrderService::class, $client->itemsOrderService());
         $this->assertInstanceOf(ItemsOrderService::class, $client->itemsOrder());
-        $this->assertInstanceOf(ItemsOptionsService::class, $client->itemsOptionsService());
         $this->assertInstanceOf(ItemsOptionsService::class, $client->itemsOptions());
-        $this->assertInstanceOf(ItemsContentsService::class, $client->itemsContentsService());
         $this->assertInstanceOf(ItemsContentsService::class, $client->itemsContents());
         $this->assertInstanceOf(ClaimService::class, $client->claim());
         $this->assertInstanceOf(CommonInfoLookupService::class, $client->commonInfoLookup());
