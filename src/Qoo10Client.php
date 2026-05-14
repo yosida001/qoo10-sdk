@@ -6,6 +6,7 @@ use Yosida001\Qoo10Sdk\Http\Requester;
 use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsBasicService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsLookupService;
+use Yosida001\Qoo10Sdk\Services\Items\ItemsOptionsService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsOrderService;
 
 class Qoo10Client
@@ -35,5 +36,10 @@ class Qoo10Client
     public function itemsOrderService(): ItemsOrderService
     {
         return new ItemsOrderService($this->requester);
+    }
+
+    public function itemsOptionsService(): ItemsOptionsService
+    {
+        return new ItemsOptionsService($this->requester);
     }
 }
