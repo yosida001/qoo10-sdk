@@ -10,7 +10,7 @@ class ConfigTest extends TestCase
 {
     public function testItExposesTheConfiguredValues(): void
     {
-        $config = new Config('cert-key', ReturnType::json());
+        $config = new Config('cert-key');
 
         $this->assertSame('cert-key', $config->getCertificationKey());
         $this->assertSame(30, $config->getTimeout());

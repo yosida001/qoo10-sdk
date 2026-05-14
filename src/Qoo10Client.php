@@ -40,15 +40,30 @@ class Qoo10Client
 
     public function itemsOrderService(): ItemsOrderService
     {
+        return $this->itemsOrder();
+    }
+
+    public function itemsOrder(): ItemsOrderService
+    {
         return new ItemsOrderService($this->requester);
     }
 
     public function itemsOptionsService(): ItemsOptionsService
     {
+        return $this->itemsOptions();
+    }
+
+    public function itemsOptions(): ItemsOptionsService
+    {
         return new ItemsOptionsService($this->requester);
     }
 
     public function itemsContentsService(): ItemsContentsService
+    {
+        return $this->itemsContents();
+    }
+
+    public function itemsContents(): ItemsContentsService
     {
         return new ItemsContentsService($this->requester);
     }

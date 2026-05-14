@@ -1,8 +1,35 @@
 {
     "name": "yosida001/qoo10-sdk",
-    "description": "Qoo10 API SDK",
+    "description": "PHP SDK for the Qoo10 Japan API.",
     "type": "library",
     "license": "Apache-2.0",
+    "keywords": [
+        "qoo10",
+        "qoo10-api",
+        "sdk"
+    ],
+    "homepage": "https://github.com/yosida001/qoo10-sdk",
+    "support": {
+        "issues": "https://github.com/yosida001/qoo10-sdk/issues",
+        "source": "https://github.com/yosida001/qoo10-sdk"
+    },
+    "archive": {
+        "exclude": [
+            "/.github",
+            "/.idea",
+            "/.agents",
+            "/.codex",
+            "/.phpunit.result.cache",
+            "/.tool-versions",
+            "/Dockerfile",
+            "/Makefile",
+            "/composer.lock",
+            "/docker-compose.yml",
+            "/phpunit.xml.dist",
+            "/tests",
+            "/vendor"
+        ]
+    },
     "require": {
         "php": "^7.2",
         "guzzlehttp/guzzle": "^6.0 || ^7.0"

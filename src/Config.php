@@ -35,21 +35,21 @@ class Config
      * Config constructor.
      *
      * @param string $certificationKey
-     * @param ReturnType $returnType
+     * @param ReturnType|null $returnType
      * @param int $timeout
      * @param bool $debug
      * @param string $userAgent
      */
     public function __construct(
         string     $certificationKey,
-        ReturnType $returnType,
+        ReturnType $returnType = null,
         int        $timeout = 30,
         bool       $debug = false,
         string $userAgent = 'yosida001/qoo10-sdk'
     )
     {
         $this->certificationKey = $certificationKey;
-        $this->returnType = $returnType;
+        $this->returnType = $returnType ?: ReturnType::json();
         $this->timeout = $timeout;
         $this->debug = $debug;
         $this->userAgent = $userAgent;

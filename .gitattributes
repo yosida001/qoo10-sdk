@@ -1,9 +1,19 @@
+* text=auto eol=lf
+
 Dockerfile export-ignore
 docker-compose.yml export-ignore
 Makefile export-ignore
 phpunit.xml.dist export-ignore
 composer.lock export-ignore
 .tool-versions export-ignore
+.agents export-ignore
+.agents/** export-ignore
+.codex export-ignore
+.codex/** export-ignore
+.idea export-ignore
 .idea/** export-ignore
+.phpunit.result.cache export-ignore
 .github/** export-ignore
 tests/** export-ignore
+vendor export-ignore
+vendor/** export-ignore
