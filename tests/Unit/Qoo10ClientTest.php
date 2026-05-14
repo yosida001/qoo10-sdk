@@ -7,7 +7,9 @@ use Yosida001\Qoo10Sdk\Config;
 use Yosida001\Qoo10Sdk\Qoo10Client;
 use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsBasicService;
+use Yosida001\Qoo10Sdk\Services\Items\ItemsContentsService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsLookupService;
+use Yosida001\Qoo10Sdk\Services\Items\ItemsOptionsService;
 use Yosida001\Qoo10Sdk\Services\Items\ItemsOrderService;
 use Yosida001\Qoo10Sdk\ValueObjects\ReturnType;
 
@@ -29,5 +31,7 @@ class Qoo10ClientTest extends TestCase
         $this->assertInstanceOf(ItemsBasicService::class, $client->itemsBasic());
         $this->assertInstanceOf(ItemsLookupService::class, $client->itemsLookup());
         $this->assertInstanceOf(ItemsOrderService::class, $client->itemsOrderService());
+        $this->assertInstanceOf(ItemsOptionsService::class, $client->itemsOptionsService());
+        $this->assertInstanceOf(ItemsContentsService::class, $client->itemsContentsService());
     }
 }
