@@ -3,7 +3,7 @@
 namespace Yosida001\Qoo10Sdk;
 
 use Yosida001\Qoo10Sdk\Http\Requester;
-use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
+use Yosida001\Qoo10Sdk\Services\CertificationAPIService;
 use Yosida001\Qoo10Sdk\Services\ClaimService;
 use Yosida001\Qoo10Sdk\Services\CommonInfoLookupService;
 use Yosida001\Qoo10Sdk\Services\CSCenterService;
