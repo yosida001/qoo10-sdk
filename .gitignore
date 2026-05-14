@@ -1,3 +1,5 @@
 /vendor/
+.agents/
+.codex/
 .idea/
 .phpunit.result.cache

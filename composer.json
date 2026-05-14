@@ -17,8 +17,6 @@
         "exclude": [
             "/.github",
             "/.idea",
-            "/.agents",
-            "/.codex",
             "/.phpunit.result.cache",
             "/.tool-versions",
             "/Dockerfile",
