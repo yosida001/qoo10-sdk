@@ -1,6 +1,6 @@
 <?php
 
-namespace Yosida001\Qoo10Sdk\Services\Items;
+namespace Yosida001\Qoo10Sdk\Services;
 
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetAllGoodsInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetGoodsInventoryInfoRequest;
@@ -8,7 +8,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetGoodsOptionInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetItemDetailInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetSellerDeliveryGroupInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\RequestFileDownloadRequest;
-use Yosida001\Qoo10Sdk\Services\AbstractService;
 
 class ItemsLookupService extends AbstractService
 {

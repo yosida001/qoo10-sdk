@@ -1,6 +1,6 @@
 <?php
 
-namespace Yosida001\Qoo10Sdk\Services\Items;
+namespace Yosida001\Qoo10Sdk\Services;
 
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditAdditionalOptionImageRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsContentsRequest;
@@ -8,7 +8,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsHeaderFooterRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsImageRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsMultiImageRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditInventoryImageRequest;
-use Yosida001\Qoo10Sdk\Services\AbstractService;
 
 class ItemsContentsService extends AbstractService
 {

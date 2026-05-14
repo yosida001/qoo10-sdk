@@ -10,7 +10,7 @@ use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetGoodsOptionInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetItemDetailInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\GetSellerDeliveryGroupInfoRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsLookup\RequestFileDownloadRequest;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsLookupService;
+use Yosida001\Qoo10Sdk\Services\ItemsLookupService;
 
 class ItemsLookupServiceTest extends TestCase
 {

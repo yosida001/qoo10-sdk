@@ -4,7 +4,7 @@ namespace Yosida001\Qoo10Sdk\Tests\Unit\Services\Certification;
 
 use PHPUnit\Framework\TestCase;
 use Yosida001\Qoo10Sdk\Http\Requester;
-use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
+use Yosida001\Qoo10Sdk\Services\CertificationAPIService;
 
 class CertificationAPIServiceTest extends TestCase
 {

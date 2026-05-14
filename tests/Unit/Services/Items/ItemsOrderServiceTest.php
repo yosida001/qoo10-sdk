@@ -10,7 +10,7 @@ use Yosida001\Qoo10Sdk\Requests\ItemsOrder\SetGoodsPriceQtyBulkRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\SetGoodsPriceQtyRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\UpdateItemDiscountRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\UpdateMoveItemDiscountRequest;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsOrderService;
+use Yosida001\Qoo10Sdk\Services\ItemsOrderService;
 
 class ItemsOrderServiceTest extends TestCase
 {

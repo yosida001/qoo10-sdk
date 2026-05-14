@@ -10,7 +10,7 @@ use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsHeaderFooterRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsImageRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditGoodsMultiImageRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditInventoryImageRequest;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsContentsService;
+use Yosida001\Qoo10Sdk\Services\ItemsContentsService;
 
 class ItemsContentsServiceTest extends TestCase
 {

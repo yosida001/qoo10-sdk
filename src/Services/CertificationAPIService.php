@@ -1,8 +1,6 @@
 <?php
 
-namespace Yosida001\Qoo10Sdk\Services\Certification;
-
-use Yosida001\Qoo10Sdk\Services\AbstractService;
+namespace Yosida001\Qoo10Sdk\Services;
 
 class CertificationAPIService extends AbstractService
 {

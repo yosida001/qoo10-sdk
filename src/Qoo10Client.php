@@ -3,12 +3,12 @@
 namespace Yosida001\Qoo10Sdk;
 
 use Yosida001\Qoo10Sdk\Http\Requester;
-use Yosida001\Qoo10Sdk\Services\Certification\CertificationAPIService;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsBasicService;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsContentsService;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsLookupService;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsOptionsService;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsOrderService;
+use Yosida001\Qoo10Sdk\Services\CertificationAPIService;
+use Yosida001\Qoo10Sdk\Services\ItemsBasicService;
+use Yosida001\Qoo10Sdk\Services\ItemsContentsService;
+use Yosida001\Qoo10Sdk\Services\ItemsLookupService;
+use Yosida001\Qoo10Sdk\Services\ItemsOptionsService;
+use Yosida001\Qoo10Sdk\Services\ItemsOrderService;
 
 class Qoo10Client
 {

@@ -1,15 +1,14 @@
 <?php
 
-namespace Yosida001\Qoo10Sdk\Services\Items;
+namespace Yosida001\Qoo10Sdk\Services;
 
 use Yosida001\Qoo10Sdk\Exceptions\Qoo10Exception;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\EditGoodsStatusRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\EditItemConditionRequest;
+use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetGoodsSubDeliveryGroupRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetNewGoodsRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetNewMoveGoodsRequest;
-use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetGoodsSubDeliveryGroupRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\UpdateGoodsRequest;
-use Yosida001\Qoo10Sdk\Services\AbstractService;
 
 class ItemsBasicService extends AbstractService
 {

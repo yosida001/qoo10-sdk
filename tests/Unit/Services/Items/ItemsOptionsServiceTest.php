@@ -10,7 +10,7 @@ use Yosida001\Qoo10Sdk\Requests\ItemsOptions\EditGoodsOptionRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOptions\EditGoodsTextOptionRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOptions\InsertInventoryDataUnitRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOptions\UpdateInventoryDataUnitRequest;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsOptionsService;
+use Yosida001\Qoo10Sdk\Services\ItemsOptionsService;
 
 class ItemsOptionsServiceTest extends TestCase
 {

@@ -10,7 +10,7 @@ use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetGoodsSubDeliveryGroupRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetNewGoodsRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\SetNewMoveGoodsRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsBasic\UpdateGoodsRequest;
-use Yosida001\Qoo10Sdk\Services\Items\ItemsBasicService;
+use Yosida001\Qoo10Sdk\Services\ItemsBasicService;
 
 class ItemsBasicServiceTest extends TestCase
 {

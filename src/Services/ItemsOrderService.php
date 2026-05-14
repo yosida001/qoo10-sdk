@@ -1,6 +1,6 @@
 <?php
 
-namespace Yosida001\Qoo10Sdk\Services\Items;
+namespace Yosida001\Qoo10Sdk\Services;
 
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\EditGoodsOrderLimitRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\EditMoveGoodsPriceRequest;
@@ -8,7 +8,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsOrder\SetGoodsPriceQtyBulkRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\SetGoodsPriceQtyRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\UpdateItemDiscountRequest;
 use Yosida001\Qoo10Sdk\Requests\ItemsOrder\UpdateMoveItemDiscountRequest;
-use Yosida001\Qoo10Sdk\Services\AbstractService;
 
 class ItemsOrderService extends AbstractService
 {
