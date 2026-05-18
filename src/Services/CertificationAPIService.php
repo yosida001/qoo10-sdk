@@ -4,8 +4,6 @@ namespace Yosida001\Qoo10Sdk\Services;
 
 class CertificationAPIService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     /**
      * @param string $userId
      * @param string $pwd

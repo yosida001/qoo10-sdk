@@ -11,8 +11,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsOptions\UpdateInventoryDataUnitRequest;
 
 class ItemsOptionsService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function editGoodsInventory(EditGoodsInventoryRequest $request) {
         return $this->post(
             'ItemsOptions.EditGoodsInventory',

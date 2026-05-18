@@ -20,6 +20,7 @@ abstract class AbstractService
     public function __construct(Requester $requester)
     {
         $this->requester = $requester;
+        $this->baseUri = $requester->getBaseUri();
     }
 
     /**

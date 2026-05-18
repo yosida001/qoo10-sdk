@@ -12,8 +12,6 @@ use Yosida001\Qoo10Sdk\Requests\ShippingBasic\SetSendingInfoRequest;
 
 class ShippingBasicService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function getShippingInfo_v3(GetShippingInfoV3Request $request) {
         return $this->post('ShippingBasic.GetShippingInfo_v3', '1.0', $request->toArray());
     }

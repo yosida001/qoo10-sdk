@@ -11,7 +11,7 @@ use Yosida001\Qoo10Sdk\Services\CommonInfoLookupService;
 
 class CommonInfoLookupServiceTest extends TestCase
 {
-    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
+    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/';
 
     /**
      * @dataProvider serviceProvider
@@ -24,13 +24,17 @@ class CommonInfoLookupServiceTest extends TestCase
     ): void {
         $request = new $requestClass($input);
         $requester = $this->createMock(Requester::class);
-        $service = new CommonInfoLookupService($requester);
         $expectedParams = $request->toArray();
 
+        $requester->expects($this->once())
+            ->method('getBaseUri')
+            ->willReturn(self::BASE_URI);
         $requester->expects($this->once())
             ->method('postRequest')
             ->with(self::BASE_URI, $apiMethod, '1.0', $expectedParams)
             ->willReturn('ok');
+
+        $service = new CommonInfoLookupService($requester);
 
         $this->assertSame('ok', $service->{$method}($request));
     }

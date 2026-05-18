@@ -11,8 +11,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsOrder\UpdateMoveItemDiscountRequest;
 
 class ItemsOrderService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function setGoodsPriceQty(SetGoodsPriceQtyRequest $request)
     {
         return $this->post(

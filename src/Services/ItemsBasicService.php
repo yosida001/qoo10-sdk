@@ -12,8 +12,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsBasic\UpdateGoodsRequest;
 
 class ItemsBasicService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     /**
      * @param SetNewGoodsRequest $request
      * @return mixed|string

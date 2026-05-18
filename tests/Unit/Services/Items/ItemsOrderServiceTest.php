@@ -14,7 +14,7 @@ use Yosida001\Qoo10Sdk\Services\ItemsOrderService;
 
 class ItemsOrderServiceTest extends TestCase
 {
-    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
+    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/';
 
     /**
      * @dataProvider serviceProvider
@@ -28,13 +28,17 @@ class ItemsOrderServiceTest extends TestCase
     ): void {
         $request = new $requestClass($input);
         $requester = $this->createMock(Requester::class);
-        $service = new ItemsOrderService($requester);
         $expectedParams = $request->toArray();
 
+        $requester->expects($this->once())
+            ->method('getBaseUri')
+            ->willReturn(self::BASE_URI);
         $requester->expects($this->once())
             ->method('postRequest')
             ->with(self::BASE_URI, $apiMethod, $version, $expectedParams)
             ->willReturn('ok');
+
+        $service = new ItemsOrderService($requester);
 
         $this->assertSame('ok', $service->{$method}($request));
     }

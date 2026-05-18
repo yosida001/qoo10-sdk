@@ -17,6 +17,11 @@ class Requester
         $this->config = $config;
     }
 
+    public function getBaseUri(): string
+    {
+        return $this->config->getBaseUri();
+    }
+
     /**
      * Sends a GET request to the specified API endpoint using the provided base URL, method, version, and parameters.
      *

@@ -11,8 +11,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsLookup\RequestFileDownloadRequest;
 
 class ItemsLookupService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function getGoodsOptionInfo(GetGoodsOptionInfoRequest $request) {
         return $this->post(
             "ItemsLookup.GetGoodsOptionInfo",

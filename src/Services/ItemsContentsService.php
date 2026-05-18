@@ -11,8 +11,6 @@ use Yosida001\Qoo10Sdk\Requests\ItemsContents\EditInventoryImageRequest;
 
 class ItemsContentsService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function editGoodsContents(EditGoodsContentsRequest $request) {
         return $this->post(
             "ItemsContentsService.EditGoodsContents",

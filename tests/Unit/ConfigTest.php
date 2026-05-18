@@ -16,6 +16,7 @@ class ConfigTest extends TestCase
         $this->assertSame(30, $config->getTimeout());
         $this->assertFalse($config->isDebug());
         $this->assertSame('yosida001/qoo10-sdk', $config->getUserAgent());
+        $this->assertSame(Config::DEFAULT_BASE_URI, $config->getBaseUri());
         $this->assertSame('json', $config->getReturnType('GET'));
         $this->assertSame('application/json', $config->getReturnType('POST'));
         $this->assertSame('application/json', $config->getReturnType('PUT'));
@@ -24,11 +25,22 @@ class ConfigTest extends TestCase
 
     public function testItSupportsXmlReturnType(): void
     {
-        $config = new Config('cert-key', ReturnType::xml(), 10, true, 'custom-agent');
+        $config = new Config(
+            'cert-key',
+            ReturnType::xml(),
+            10,
+            true,
+            'custom-agent',
+            'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/'
+        );
 
         $this->assertSame(10, $config->getTimeout());
         $this->assertTrue($config->isDebug());
         $this->assertSame('custom-agent', $config->getUserAgent());
+        $this->assertSame(
+            'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/',
+            $config->getBaseUri()
+        );
         $this->assertSame('xml', $config->getReturnType('GET'));
         $this->assertSame('text/xml', $config->getReturnType('POST'));
         $this->assertFalse($config->isReturnTypeJson());

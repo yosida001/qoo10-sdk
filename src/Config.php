@@ -6,6 +6,8 @@ use Yosida001\Qoo10Sdk\ValueObjects\ReturnType;
 
 class Config
 {
+    public const DEFAULT_BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/';
+
     /**
      * @var string
      */
@@ -32,6 +34,11 @@ class Config
     private $userAgent;
 
     /**
+     * @var string
+     */
+    private $baseUri;
+
+    /**
      * Config constructor.
      *
      * @param string $certificationKey
@@ -39,13 +46,15 @@ class Config
      * @param int $timeout
      * @param bool $debug
      * @param string $userAgent
+     * @param string $baseUri
      */
     public function __construct(
         string     $certificationKey,
         ReturnType $returnType = null,
         int        $timeout = 30,
         bool       $debug = false,
-        string $userAgent = 'yosida001/qoo10-sdk'
+        string $userAgent = 'yosida001/qoo10-sdk',
+        string $baseUri = self::DEFAULT_BASE_URI
     )
     {
         $this->certificationKey = $certificationKey;
@@ -53,6 +62,7 @@ class Config
         $this->timeout = $timeout;
         $this->debug = $debug;
         $this->userAgent = $userAgent;
+        $this->baseUri = $this->normalizeBaseUri($baseUri);
     }
 
     /**
@@ -106,5 +116,15 @@ class Config
     public function getUserAgent(): string
     {
         return $this->userAgent;
+    }
+
+    public function getBaseUri(): string
+    {
+        return $this->baseUri;
+    }
+
+    private function normalizeBaseUri(string $baseUri): string
+    {
+        return rtrim($baseUri, '/') . '/';
     }
 }

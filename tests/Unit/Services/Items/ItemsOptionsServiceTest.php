@@ -14,7 +14,7 @@ use Yosida001\Qoo10Sdk\Services\ItemsOptionsService;
 
 class ItemsOptionsServiceTest extends TestCase
 {
-    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
+    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/';
 
     /**
      * @dataProvider serviceProvider
@@ -28,13 +28,17 @@ class ItemsOptionsServiceTest extends TestCase
     ): void {
         $request = new $requestClass($input);
         $requester = $this->createMock(Requester::class);
-        $service = new ItemsOptionsService($requester);
         $expectedParams = $request->toArray();
 
+        $requester->expects($this->once())
+            ->method('getBaseUri')
+            ->willReturn(self::BASE_URI);
         $requester->expects($this->once())
             ->method('postRequest')
             ->with(self::BASE_URI, $apiMethod, $version, $expectedParams)
             ->willReturn('ok');
+
+        $service = new ItemsOptionsService($requester);
 
         $this->assertSame('ok', $service->{$method}($request));
     }

@@ -76,6 +76,51 @@ class RequesterTest extends TestCase
         $this->assertSame('https://example.com/api', $requester->createdBaseUrl);
     }
 
+    public function testItExposesTheConfiguredBaseUri(): void
+    {
+        $requester = new TestableRequester(
+            new Config(
+                'cert-key',
+                ReturnType::json(),
+                15,
+                false,
+                'custom-agent',
+                'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi'
+            ),
+            $this->createMock(Client::class)
+        );
+
+        $this->assertSame(
+            'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/',
+            $requester->getBaseUri()
+        );
+    }
+
+    public function testItBuildsTheExpectedFinalPostUrl(): void
+    {
+        $history = [];
+        $handler = \GuzzleHttp\HandlerStack::create(new \GuzzleHttp\Handler\MockHandler([
+            new Response(200, [], 'plain-body'),
+        ]));
+        $handler->push(\GuzzleHttp\Middleware::history($history));
+
+        $client = new Client([
+            'base_uri' => 'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/',
+            'handler' => $handler,
+        ]);
+        $requester = new TestableRequester(
+            new Config('cert-key', ReturnType::xml(), 20, false, 'custom-agent', 'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi'),
+            $client
+        );
+
+        $requester->postRequest('https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/', 'ItemsLookup.GetAllGoodsInfo', '1.0');
+
+        $this->assertSame(
+            'https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/ItemsLookup.GetAllGoodsInfo',
+            (string)$history[0]['request']->getUri()
+        );
+    }
+
     public function testItThrowsWhenJsonResponseIsInvalid(): void
     {
         $client = $this->createMock(Client::class);

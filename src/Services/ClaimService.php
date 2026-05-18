@@ -8,8 +8,6 @@ use Yosida001\Qoo10Sdk\Requests\Claim\SetClaimRedeliveryRequest;
 
 class ClaimService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function setCancelProcess(SetCancelProcessRequest $request) {
         return $this->post('Claim.SetCancelProcess', "1.0", $request->toArray());
     }

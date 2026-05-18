@@ -46,9 +46,13 @@ $config = new Config(
     ReturnType::xml(),
     30,
     false,
-    'your-app-name'
+    'your-app-name',
+    'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/'
 );
 ```
+
+`baseUri` を省略すると `https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/` を使います。
+`https://www.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/` のように末尾スラッシュ付きで指定しても、内部で正規化されます。
 
 ## 利用できるサービス
 

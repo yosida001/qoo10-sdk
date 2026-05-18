@@ -9,8 +9,6 @@ use Yosida001\Qoo10Sdk\Requests\CommonInfoLookup\SearchMakerRequest;
 
 class CommonInfoLookupService extends AbstractService
 {
-    protected $baseUri = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
-
     public function getCatagoryListAll(GetCatagoryListAllRequest $request) {
         return $this->post('CommonInfoLookup.GetCatagoryListAll', '1.0', $request->toArray());
     }

@@ -8,12 +8,15 @@ use Yosida001\Qoo10Sdk\Services\CertificationAPIService;
 
 class CertificationAPIServiceTest extends TestCase
 {
-    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi';
+    private const BASE_URI = 'https://api.qoo10.jp/GMKT.INC.Front.QAPIService/ebayjapan.qapi/';
 
     public function testItForwardsCreateCertificationKeyToRequester(): void
     {
         $requester = $this->createMock(Requester::class);
-        $service = new CertificationAPIService($requester);
+
+        $requester->expects($this->once())
+            ->method('getBaseUri')
+            ->willReturn(self::BASE_URI);
 
         $requester->expects($this->once())
             ->method('postRequest')
@@ -27,6 +30,8 @@ class CertificationAPIServiceTest extends TestCase
                 ]
             )
             ->willReturn('ok');
+
+        $service = new CertificationAPIService($requester);
 
         $this->assertSame('ok', $service->createCertificationKey('user-1', 'secret'));
     }
