@@ -13,7 +13,7 @@ class ItemsContentsService extends AbstractService
 {
     public function editGoodsContents(EditGoodsContentsRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditGoodsContents",
+            "ItemsContents.EditGoodsContents",
             "1.0",
             $request->toArray()
         );
@@ -21,7 +21,7 @@ class ItemsContentsService extends AbstractService
 
     public function editGoodsImage(EditGoodsImageRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditGoodsImage",
+            "ItemsContents.EditGoodsImage",
             "1.1",
             $request->toArray()
         );
@@ -29,7 +29,7 @@ class ItemsContentsService extends AbstractService
 
     public function editGoodsMultiImage(EditGoodsMultiImageRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditGoodsMultiImage",
+            "ItemsContents.EditGoodsMultiImage",
             "1.0",
             $request->toArray()
         );
@@ -37,7 +37,7 @@ class ItemsContentsService extends AbstractService
 
     public function editGoodsHeaderFooter(EditGoodsHeaderFooterRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditGoodsHeaderFooter",
+            "ItemsContents.EditGoodsHeaderFooter",
             "1.0",
             $request->toArray()
         );
@@ -45,7 +45,7 @@ class ItemsContentsService extends AbstractService
 
     public function editAdditionalOptionImage(EditAdditionalOptionImageRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditAdditionalOptionImage",
+            "ItemsContents.EditAdditionalOptionImage",
             "1.0",
             $request->toArray()
         );
@@ -53,7 +53,7 @@ class ItemsContentsService extends AbstractService
 
     public function editInventoryImage(EditInventoryImageRequest $request) {
         return $this->post(
-            "ItemsContentsService.EditInventoryImage",
+            "ItemsContents.EditInventoryImage",
             "1.0",
             $request->toArray()
         );
