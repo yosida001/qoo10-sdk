@@ -53,7 +53,7 @@ class ItemsContentsServiceTest extends TestCase
                     'itemCode' => 'ITEM-1',
                     'contents' => '<p>body</p>',
                 ],
-                'ItemsContentsService.EditGoodsContents',
+                'ItemsContents.EditGoodsContents',
                 '1.0',
             ],
             'edit goods image' => [
@@ -63,7 +63,7 @@ class ItemsContentsServiceTest extends TestCase
                     'itemCode' => 'ITEM-2',
                     'standardImage' => 'https://example.com/standard.jpg',
                 ],
-                'ItemsContentsService.EditGoodsImage',
+                'ItemsContents.EditGoodsImage',
                 '1.1',
             ],
             'edit goods multi image' => [
@@ -73,7 +73,7 @@ class ItemsContentsServiceTest extends TestCase
                     'itemCode' => 'ITEM-3',
                     'EnlargedImage1' => 'https://example.com/1.jpg',
                 ],
-                'ItemsContentsService.EditGoodsMultiImage',
+                'ItemsContents.EditGoodsMultiImage',
                 '1.0',
             ],
             'edit goods header footer' => [
@@ -83,7 +83,7 @@ class ItemsContentsServiceTest extends TestCase
                     'ItemCode' => 'ITEM-4',
                     'Header' => '<h1>header</h1>',
                 ],
-                'ItemsContentsService.EditGoodsHeaderFooter',
+                'ItemsContents.EditGoodsHeaderFooter',
                 '1.0',
             ],
             'edit additional option image' => [
@@ -93,7 +93,7 @@ class ItemsContentsServiceTest extends TestCase
                     'ItemCode' => 'ITEM-5',
                     'AdditionalOptionImage' => 'https://example.com/opt.jpg',
                 ],
-                'ItemsContentsService.EditAdditionalOptionImage',
+                'ItemsContents.EditAdditionalOptionImage',
                 '1.0',
             ],
             'edit inventory image' => [
@@ -103,7 +103,7 @@ class ItemsContentsServiceTest extends TestCase
                     'ItemCode' => 'ITEM-6',
                     'InventoryImage' => 'https://example.com/inventory.jpg',
                 ],
-                'ItemsContentsService.EditInventoryImage',
+                'ItemsContents.EditInventoryImage',
                 '1.0',
             ],
         ];
