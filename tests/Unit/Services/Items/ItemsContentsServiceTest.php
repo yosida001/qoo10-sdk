@@ -50,8 +50,8 @@ class ItemsContentsServiceTest extends TestCase
                 'editGoodsContents',
                 EditGoodsContentsRequest::class,
                 [
-                    'itemCode' => 'ITEM-1',
-                    'contents' => '<p>body</p>',
+                    'ItemCode' => 'ITEM-1',
+                    'Contents' => '<p>body</p>',
                 ],
                 'ItemsContents.EditGoodsContents',
                 '1.0',
@@ -60,8 +60,8 @@ class ItemsContentsServiceTest extends TestCase
                 'editGoodsImage',
                 EditGoodsImageRequest::class,
                 [
-                    'itemCode' => 'ITEM-2',
-                    'standardImage' => 'https://example.com/standard.jpg',
+                    'ItemCode' => 'ITEM-2',
+                    'StandardImage' => 'https://example.com/standard.jpg',
                 ],
                 'ItemsContents.EditGoodsImage',
                 '1.1',
@@ -70,7 +70,7 @@ class ItemsContentsServiceTest extends TestCase
                 'editGoodsMultiImage',
                 EditGoodsMultiImageRequest::class,
                 [
-                    'itemCode' => 'ITEM-3',
+                    'ItemCode' => 'ITEM-3',
                     'EnlargedImage1' => 'https://example.com/1.jpg',
                 ],
                 'ItemsContents.EditGoodsMultiImage',

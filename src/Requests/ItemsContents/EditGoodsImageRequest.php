@@ -5,10 +5,10 @@ namespace Yosida001\Qoo10Sdk\Requests\ItemsContents;
 use Yosida001\Qoo10Sdk\Requests\AbstractRequest;
 
 /**
- * @property mixed $itemCode
- * @property mixed $sellerCode
- * @property mixed $standardImage
- * @property mixed $videoURL
+ * @property mixed $ItemCode
+ * @property mixed $SellerCode
+ * @property mixed $StandardImage
+ * @property mixed $VideoURL
  */
 class EditGoodsImageRequest extends AbstractRequest
 {
@@ -23,10 +23,10 @@ class EditGoodsImageRequest extends AbstractRequest
     protected function getParameterNames()
     {
         return [
-            'itemCode',
-            'sellerCode',
-            'standardImage',
-            'videoURL',
+            'ItemCode',
+            'SellerCode',
+            'StandardImage',
+            'VideoURL',
         ];
     }
 }

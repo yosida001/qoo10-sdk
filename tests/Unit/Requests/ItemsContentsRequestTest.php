@@ -39,38 +39,38 @@ class ItemsContentsRequestTest extends TestCase
             'edit goods contents' => [
                 EditGoodsContentsRequest::class,
                 [
-                    'itemCode' => 'ITEM-1',
-                    'contents' => '<p>body</p>',
+                    'ItemCode' => 'ITEM-1',
+                    'Contents' => '<p>body</p>',
                 ],
                 [
-                    'itemCode',
-                    'sellerCode',
-                    'contents',
+                    'ItemCode',
+                    'SellerCode',
+                    'Contents',
                 ],
             ],
             'edit goods image' => [
                 EditGoodsImageRequest::class,
                 [
-                    'itemCode' => 'ITEM-2',
-                    'standardImage' => 'https://example.com/standard.jpg',
+                    'ItemCode' => 'ITEM-2',
+                    'StandardImage' => 'https://example.com/standard.jpg',
                 ],
                 [
-                    'itemCode',
-                    'sellerCode',
-                    'standardImage',
-                    'videoURL',
+                    'ItemCode',
+                    'SellerCode',
+                    'StandardImage',
+                    'VideoURL',
                 ],
             ],
             'edit goods multi image' => [
                 EditGoodsMultiImageRequest::class,
                 [
-                    'itemCode' => 'ITEM-3',
+                    'ItemCode' => 'ITEM-3',
                     'EnlargedImage1' => 'https://example.com/1.jpg',
                     'EnlargedImage50' => 'https://example.com/50.jpg',
                 ],
                 [
-                    'itemCode',
-                    'sellerCode',
+                    'ItemCode',
+                    'SellerCode',
                     'EnlargedImage1',
                     'EnlargedImage2',
                     'EnlargedImage3',

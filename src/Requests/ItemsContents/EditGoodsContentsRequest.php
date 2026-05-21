@@ -5,9 +5,9 @@ namespace Yosida001\Qoo10Sdk\Requests\ItemsContents;
 use Yosida001\Qoo10Sdk\Requests\AbstractRequest;
 
 /**
- * @property mixed $itemCode
- * @property mixed $sellerCode
- * @property mixed $contents
+ * @property mixed $ItemCode
+ * @property mixed $SellerCode
+ * @property mixed $Contents
  */
 class EditGoodsContentsRequest extends AbstractRequest
 {
@@ -22,9 +22,9 @@ class EditGoodsContentsRequest extends AbstractRequest
     protected function getParameterNames()
     {
         return [
-            'itemCode',
-            'sellerCode',
-            'contents',
+            'ItemCode',
+            'SellerCode',
+            'Contents',
         ];
     }
 }

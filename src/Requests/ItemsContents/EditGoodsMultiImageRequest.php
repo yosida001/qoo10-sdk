@@ -5,8 +5,8 @@ namespace Yosida001\Qoo10Sdk\Requests\ItemsContents;
 use Yosida001\Qoo10Sdk\Requests\AbstractRequest;
 
 /**
- * @property mixed $itemCode
- * @property mixed $sellerCode
+ * @property mixed $ItemCode
+ * @property mixed $SellerCode
  * @property mixed $EnlargedImage1
  * @property mixed $EnlargedImage2
  * @property mixed $EnlargedImage3
@@ -71,8 +71,8 @@ class EditGoodsMultiImageRequest extends AbstractRequest
     protected function getParameterNames()
     {
         return [
-            'itemCode',
-            'sellerCode',
+            'ItemCode',
+            'SellerCode',
             'EnlargedImage1',
             'EnlargedImage2',
             'EnlargedImage3',
