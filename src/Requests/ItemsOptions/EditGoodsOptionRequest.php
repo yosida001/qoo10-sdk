@@ -24,7 +24,7 @@ class EditGoodsOptionRequest extends AbstractRequest
         return [
             'ItemCode',
             'SellerCode',
-            'AdditionalOptions',
+            'AdditionalOption',
         ];
     }
 }
