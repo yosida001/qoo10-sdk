@@ -64,12 +64,12 @@ class ItemsOptionsRequestTest extends TestCase
                 EditGoodsOptionRequest::class,
                 [
                     'ItemCode' => 'ITEM-3',
-                    'AdditionalOptions' => '[]',
+                    'AdditionalOption' => '[]',
                 ],
                 [
                     'ItemCode',
                     'SellerCode',
-                    'AdditionalOptions',
+                    'AdditionalOption',
                 ],
             ],
             'delete inventory data unit' => [
