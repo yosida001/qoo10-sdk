@@ -71,7 +71,7 @@ class ItemsOptionsServiceTest extends TestCase
                 EditGoodsOptionRequest::class,
                 [
                     'ItemCode' => 'ITEM-3',
-                    'AdditionalOptions' => '[]',
+                    'AdditionalOption' => '[]',
                 ],
                 'ItemsOptions.EditGoodsOption',
                 '1.0',
