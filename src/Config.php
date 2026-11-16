@@ -50,7 +50,7 @@ class Config
      */
     public function __construct(
         string     $certificationKey,
-        ReturnType $returnType = null,
+        ?ReturnType $returnType = null,
         int        $timeout = 30,
         bool       $debug = false,
         string $userAgent = 'yosida001/qoo10-sdk',
